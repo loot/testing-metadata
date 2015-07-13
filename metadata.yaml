@@ -1,0 +1,31 @@
+globals:
+  - type: say
+    content: 'A global message.'
+
+plugins:
+  - name: 'Blank.esm'
+    priority: -100
+    msg:
+      - type: warn
+        content: 'This is a warning.'
+      - type: say
+        content: 'This message should be removed when evaluating conditions.'
+        condition: 'active("Blank - Different.esm")'
+
+  - name: 'Blank.esm'
+    msg:
+      - type: error
+        content: 'This plugin entry will be ignored, as it is not the first exact entry.'
+
+  - name: 'Blank.+\.esp'
+    after:
+      - 'Blank.esm'
+
+  - name: 'Blank.+(Different)?.*\.esp'
+    inc:
+      - 'Blank.esp'
+
+  - name: 'Blank.esp'
+    dirty:
+      - crc: 0xDEADBEEF
+        util: utility
