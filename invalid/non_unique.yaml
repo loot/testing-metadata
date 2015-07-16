@@ -12,6 +12,11 @@ plugins:
         content: 'This message should be removed when evaluating conditions.'
         condition: 'active("Blank - Different.esm")'
 
+  - name: 'Blank.esm'
+    msg:
+      - type: error
+        content: 'This plugin entry will cause a failure, as it is not the first exact entry.'
+
   - name: 'Blank.+\.esp'
     after:
       - 'Blank.esm'
