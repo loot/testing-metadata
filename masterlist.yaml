@@ -1,3 +1,7 @@
+bash_tags:
+  - 'C.Climate'
+  - 'Relev'
+
 globals:
   - type: say
     content: 'A global message.'
