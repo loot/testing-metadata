@@ -1,6 +1,14 @@
 bash_tags:
   - 'C.Climate'
   - 'Relev'
+  
+groups:
+  - name: group1
+    after:
+      - group2
+  - name: group2
+    after:
+      - default
 
 globals:
   - type: say
@@ -25,6 +33,7 @@ plugins:
       - 'Blank.esp'
 
   - name: 'Blank.esp'
+    group: group2
     dirty:
       - crc: 0xDEADBEEF
         util: utility
